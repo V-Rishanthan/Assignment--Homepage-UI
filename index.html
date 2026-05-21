@@ -1,13 +1,23 @@
 <!DOCTYPE html>
 <html lang="en" class="scroll-smooth">
+
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Kape. — Flower Shop</title>
+  <title>Kngu.</title>
   <script src="https://cdn.tailwindcss.com"></script>
+  <!-- Load Tailwind CSS (utility-first framework) via CDN for utility classes and runtime config. -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+  <!-- Swiper carousel stylesheet: provides styles for sliders (hero/testimonials). -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <!-- Preconnect to Google Fonts to speed up font resource lookup. -->
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+  <!-- Preconnect to Google Fonts static host with CORS for faster font file delivery. -->
+  <link
+    href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=Poppins:wght@300;400;500;600;700&display=swap"
+    rel="stylesheet" /> <!-- Load Playfair Display and Poppins font families from Google Fonts. -->
+  <link rel="stylesheet" href="./css/global.css">
+  <!-- Local global stylesheet with site-specific styles and overrides. -->
   <script>
     tailwind.config = {
       theme: {
@@ -34,45 +44,87 @@
       },
     };
   </script>
+
 </head>
+
 <body class="font-sans text-gray-800 antialiased">
 
   <!-- Header -->
-  <header id="header" class="sticky top-0 z-50 bg-white/95 backdrop-blur-sm border-b border-gray-100 transition-shadow duration-300">
+  <header id="header"
+    class="sticky top-0 z-50 bg-white/95 backdrop-blur-sm border-b border-gray-100 transition-shadow duration-300">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       <div class="flex items-center justify-between h-16 lg:h-20">
         <!-- Logo -->
         <a href="#" class="flex items-center gap-1.5 shrink-0">
-          <svg class="w-6 h-6 text-brand" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
-            <path d="M12 2C9.5 2 7.5 4 7 6.5 5 6 3 8 3 10.5 3 13 5 15 7.5 15.5 7 18 9 20 12 20s5-2 5-4.5C19 13 17 11 15 10.5 14.5 8 12.5 6 10 6 10.5 4 12 2z"/>
+          <!-- <svg class="w-6 h-6 text-brand" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+            <path
+              d="M12 2C9.5 2 7.5 4 7 6.5 5 6 3 8 3 10.5 3 13 5 15 7.5 15.5 7 18 9 20 12 20s5-2 5-4.5C19 13 17 11 15 10.5 14.5 8 12.5 6 10 6 10.5 4 12 2z" />
+          </svg> -->
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+            stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+            class="lucide lucide-rose-icon lucide-rose">
+            <path d="M17 10h-1a4 4 0 1 1 4-4v.534" />
+            <path d="M17 6h1a4 4 0 0 1 1.42 7.74l-2.29.87a6 6 0 0 1-5.339-10.68l2.069-1.31" />
+            <path d="M4.5 17c2.8-.5 4.4 0 5.5.8s1.8 2.2 2.3 3.7c-2 .4-3.5.4-4.8-.3-1.2-.6-2.3-1.9-3-4.2" />
+            <path d="M9.77 12C4 15 2 22 2 22" />
+            <circle cx="17" cy="8" r="2" />
           </svg>
-          <span class="font-serif text-2xl font-bold text-gray-900">Kape.</span>
+          <span class="font-serif text-2xl font-bold text-orange-500">Kape.</span>
         </a>
 
         <!-- Desktop Nav -->
         <nav class="hidden lg:flex items-center gap-8" aria-label="Main navigation">
           <a href="#" class="text-xs font-medium tracking-widest text-brand transition-colors">HOME</a>
-          <a href="#shop" class="text-xs font-medium tracking-widest text-gray-600 hover:text-brand transition-colors">SHOP</a>
-          <a href="#pages" class="text-xs font-medium tracking-widest text-gray-600 hover:text-brand transition-colors">PAGES</a>
-          <a href="#blog" class="text-xs font-medium tracking-widest text-gray-600 hover:text-brand transition-colors">BLOG</a>
-          <a href="#contact" class="text-xs font-medium tracking-widest text-gray-600 hover:text-brand transition-colors">CONTACT</a>
+          <a href="#shop"
+            class="text-xs font-medium tracking-widest text-gray-600 hover:text-brand transition-colors flex items-center gap-1">SHOP
+            <span><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none"
+                stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                class="lucide lucide-chevron-down-icon lucide-chevron-down">
+                <path d="m6 9 6 6 6-6" />
+              </svg></span>
+
+          </a>
+          <a href="#blog"
+            class="text-xs font-medium tracking-widest text-gray-600 hover:text-brand transition-colors flex items-center gap-1">
+            BLOG
+            <span><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none"
+                stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                class="lucide lucide-chevron-down-icon lucide-chevron-down">
+                <path d="m6 9 6 6 6-6" />
+              </svg></span>
+
+          </a>
+          <a href="#pages"
+            class="text-xs font-medium tracking-widest text-gray-600 hover:text-brand transition-colors flex items-center gap-1">PAGES
+            <span><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none"
+                stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                class="lucide lucide-chevron-down-icon lucide-chevron-down">
+                <path d="m6 9 6 6 6-6" />
+              </svg></span>
+
+          </a>
+          <a href="#contact"
+            class="text-xs font-medium tracking-widest text-gray-600 hover:text-brand transition-colors">CONTACT</a>
         </nav>
 
-        <!-- Icons -->
         <div class="flex items-center gap-4 sm:gap-5">
-          <button type="button" class="text-gray-700 hover:text-brand transition-colors p-1 hidden sm:flex" aria-label="Search">
-            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"/></svg>
+          <button type="button" class="text-gray-700 hover:text-brand transition-colors p-1 hidden sm:flex"
+            aria-label="Search">
+            <i data-lucide="search" class="w-5 h-5" aria-hidden="true" id="icon-search"></i>
           </button>
-          <button type="button" class="text-gray-700 hover:text-brand transition-colors p-1 hidden sm:flex" aria-label="Account">
-            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"/></svg>
+          <button type="button" class="text-gray-700 hover:text-brand transition-colors p-1 hidden sm:flex"
+            aria-label="Account">
+            <i data-lucide="user" class="w-5 h-5" aria-hidden="true" id="icon-account"></i>
           </button>
           <button type="button" class="text-gray-700 hover:text-brand transition-colors p-1 relative" aria-label="Cart">
-            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z"/></svg>
-            <span class="absolute -top-1.5 -right-1.5 w-4 h-4 bg-brand text-white text-[10px] font-semibold rounded-full flex items-center justify-center">0</span>
+            <i data-lucide="shopping-cart" class="w-5 h-5" aria-hidden="true" id="icon-cart"></i>
+            <span
+              class="absolute -top-1.5 -right-1.5 w-4 h-4 bg-brand text-white text-[10px] font-semibold rounded-full flex items-center justify-center">0</span>
           </button>
-          <button id="menu-toggle" type="button" class="lg:hidden text-gray-700 hover:text-brand transition-colors p-1" aria-label="Open menu" aria-expanded="false">
-            <svg id="menu-icon-open" class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M4 6h16M4 12h16M4 18h16"/></svg>
-            <svg id="menu-icon-close" class="w-6 h-6 hidden" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M6 18L18 6M6 6l12 12"/></svg>
+          <button id="menu-toggle" type="button" class="lg:hidden text-gray-700 hover:text-brand transition-colors p-1"
+            aria-label="Open menu" aria-expanded="false">
+            <i id="menu-icon-open" data-lucide="menu" class="w-6 h-6" aria-hidden="true"></i>
+            <i id="menu-icon-close" data-lucide="x" class="w-6 h-6 hidden" aria-hidden="true"></i>
           </button>
         </div>
       </div>
@@ -80,76 +132,99 @@
       <!-- Mobile Nav -->
       <nav id="mobile-nav" class="lg:hidden hidden pb-4 border-t border-gray-100 pt-4" aria-label="Mobile navigation">
         <div class="flex flex-col gap-3">
-          <a href="#" class="text-sm font-medium tracking-wide text-gray-700 hover:text-brand py-1 transition-colors">HOME</a>
-          <a href="#shop" class="text-sm font-medium tracking-wide text-gray-700 hover:text-brand py-1 transition-colors">SHOP</a>
-          <a href="#pages" class="text-sm font-medium tracking-wide text-gray-700 hover:text-brand py-1 transition-colors">PAGES</a>
-          <a href="#blog" class="text-sm font-medium tracking-wide text-gray-700 hover:text-brand py-1 transition-colors">BLOG</a>
-          <a href="#contact" class="text-sm font-medium tracking-wide text-gray-700 hover:text-brand py-1 transition-colors">CONTACT</a>
+          <a href="#"
+            class="text-sm font-medium tracking-wide text-gray-700 hover:text-brand py-1 transition-colors">HOME</a>
+          <a href="#shop"
+            class="text-sm font-medium tracking-wide text-gray-700 hover:text-brand py-1 transition-colors">SHOP</a>
+          <a href="#pages"
+            class="text-sm font-medium tracking-wide text-gray-700 hover:text-brand py-1 transition-colors"> BLOG</a>
+          <a href="#blog"
+            class="text-sm font-medium tracking-wide text-gray-700 hover:text-brand py-1 transition-colors">PAGES</a>
+          <a href="#contact"
+            class="text-sm font-medium tracking-wide text-gray-700 hover:text-brand py-1 transition-colors">CONTACT</a>
         </div>
       </nav>
     </div>
   </header>
 
   <main>
-    <!-- Hero Carousel -->
-    <section class="relative bg-gray-50 overflow-hidden" aria-label="Hero slider">
-      <div id="hero-slider" class="relative">
-        <!-- Slide 1 -->
-        <div class="hero-slide">
-          <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 lg:py-20">
-            <div class="grid lg:grid-cols-2 gap-10 lg:gap-16 items-center">
-              <div class="order-2 lg:order-1 text-center lg:text-left">
-                <p class="text-xs sm:text-sm tracking-[0.2em] text-gray-500 uppercase mb-3">Latest Collection</p>
-                <h1 class="font-sans text-3xl sm:text-4xl lg:text-5xl xl:text-6xl font-bold text-gray-900 leading-tight mb-4">HAPPY MOTHER'S DAY!</h1>
-                <p class="text-gray-500 text-sm sm:text-base max-w-md mx-auto lg:mx-0 mb-8">Everything you need for Mother's Day — fresh blooms, curated bouquets, and same-day delivery.</p>
-                <a href="#shop" class="inline-block bg-brand text-white text-xs font-semibold tracking-widest px-8 py-3.5 rounded-full hover:bg-gray-900 transition-colors duration-300">SHOP NOW</a>
+    <!-- Hero Carousel (Swiper.js) -->
+    <section aria-label="Hero slider">
+      <div class="swiper hero-swiper">
+        <div class="swiper-wrapper">
+          <!-- Slide 1 -->
+          <div class="swiper-slide">
+            <div class="slide-bg"
+              style="background-image: url('https://plus.unsplash.com/premium_photo-1661292066962-48e5815dc7ce?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D');">
+            </div>
+            <div class="slide-overlay"></div>
+            <div class="slide-content">
+              <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
+                <div class="content-inner max-w-2xl">
+                  <span class="hero-subtitle">Latest Collection</span>
+                  <h1
+                    class="font-sans text-4xl sm:text-5xl lg:text-6xl xl:text-7xl font-bold text-white leading-tight mb-5">
+                    HAPPY MOTHER'S<br>DAY!</h1>
+                  <p class="text-white/75 text-sm sm:text-base lg:text-lg max-w-lg mb-8 leading-relaxed">Everything you
+                    need for Mother's Day — fresh blooms, curated bouquets, and same-day delivery.</p>
+                  <a href="#shop"
+                    class="inline-block bg-brand text-white text-xs font-semibold tracking-widest px-8 py-3.5 rounded-full hover:bg-white hover:text-gray-900 transition-colors duration-300">SHOP
+                    NOW</a>
+                </div>
               </div>
-              <div class="order-1 lg:order-2 flex justify-center">
-                <img src="https://images.unsplash.com/photo-1520763185295-f1397f4b51db?w=800&q=80" alt="Pink and white tulips with pastel eggs" class="w-full max-w-lg object-cover aspect-[6/5] rounded-lg shadow-lg" width="600" height="500" />
+            </div>
+          </div>
+          <!-- Slide 2 -->
+          <div class="swiper-slide">
+            <div class="slide-bg"
+              style="background-image: url('https://images.unsplash.com/photo-1490750967868-88aa4486c946?w=1600&q=80');">
+            </div>
+            <div class="slide-overlay"></div>
+            <div class="slide-content">
+              <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
+                <div class="content-inner max-w-2xl">
+                  <span class="hero-subtitle">Spring Collection</span>
+                  <h2
+                    class="font-sans text-4xl sm:text-5xl lg:text-6xl xl:text-7xl font-bold text-white leading-tight mb-5">
+                    BLOOM INTO<br>SPRING</h2>
+                  <p class="text-white/75 text-sm sm:text-base lg:text-lg max-w-lg mb-8 leading-relaxed">Discover
+                    vibrant seasonal arrangements handcrafted by our expert florists.</p>
+                  <a href="#shop"
+                    class="inline-block bg-brand text-white text-xs font-semibold tracking-widest px-8 py-3.5 rounded-full hover:bg-white hover:text-gray-900 transition-colors duration-300">SHOP
+                    NOW</a>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- Slide 3 -->
+          <div class="swiper-slide">
+            <div class="slide-bg"
+              style="background-image: url('https://plus.unsplash.com/premium_photo-1670426502110-826cc8fc9f10?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D');">
+            </div>
+            <div class="slide-overlay"></div>
+            <div class="slide-content">
+              <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
+                <div class="content-inner max-w-2xl">
+                  <span class="hero-subtitle">Valentine Special</span>
+                  <h2
+                    class="font-sans text-4xl sm:text-5xl lg:text-6xl xl:text-7xl font-bold text-white leading-tight mb-5">
+                    SAY IT WITH<br>FLOWERS</h2>
+                  <p class="text-white/75 text-sm sm:text-base lg:text-lg max-w-lg mb-8 leading-relaxed">Express your
+                    love with our exclusive Valentine's Day collection.</p>
+                  <a href="#shop"
+                    class="inline-block bg-brand text-white text-xs font-semibold tracking-widest px-8 py-3.5 rounded-full hover:bg-white hover:text-gray-900 transition-colors duration-300">SHOP
+                    NOW</a>
+                </div>
               </div>
             </div>
           </div>
         </div>
-        <!-- Slide 2 -->
-        <div class="hero-slide hidden">
-          <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 lg:py-20">
-            <div class="grid lg:grid-cols-2 gap-10 lg:gap-16 items-center">
-              <div class="order-2 lg:order-1 text-center lg:text-left">
-                <p class="text-xs sm:text-sm tracking-[0.2em] text-gray-500 uppercase mb-3">Spring Collection</p>
-                <h2 class="font-sans text-3xl sm:text-4xl lg:text-5xl xl:text-6xl font-bold text-gray-900 leading-tight mb-4">BLOOM INTO SPRING</h2>
-                <p class="text-gray-500 text-sm sm:text-base max-w-md mx-auto lg:mx-0 mb-8">Discover vibrant seasonal arrangements handcrafted by our expert florists.</p>
-                <a href="#shop" class="inline-block bg-brand text-white text-xs font-semibold tracking-widest px-8 py-3.5 rounded-full hover:bg-gray-900 transition-colors duration-300">SHOP NOW</a>
-              </div>
-              <div class="order-1 lg:order-2 flex justify-center">
-                <img src="https://images.unsplash.com/photo-1490750967868-88aa4486c946?w=800&q=80" alt="Colorful spring flower bouquet" class="w-full max-w-lg object-cover aspect-[6/5] rounded-lg shadow-lg" width="600" height="500" />
-              </div>
-            </div>
-          </div>
-        </div>
-        <!-- Slide 3 -->
-        <div class="hero-slide hidden">
-          <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 lg:py-20">
-            <div class="grid lg:grid-cols-2 gap-10 lg:gap-16 items-center">
-              <div class="order-2 lg:order-1 text-center lg:text-left">
-                <p class="text-xs sm:text-sm tracking-[0.2em] text-gray-500 uppercase mb-3">Valentine Special</p>
-                <h2 class="font-sans text-3xl sm:text-4xl lg:text-5xl xl:text-6xl font-bold text-gray-900 leading-tight mb-4">SAY IT WITH FLOWERS</h2>
-                <p class="text-gray-500 text-sm sm:text-base max-w-md mx-auto lg:mx-0 mb-8">Express your love with our exclusive Valentine's Day collection.</p>
-                <a href="#shop" class="inline-block bg-brand text-white text-xs font-semibold tracking-widest px-8 py-3.5 rounded-full hover:bg-gray-900 transition-colors duration-300">SHOP NOW</a>
-              </div>
-              <div class="order-1 lg:order-2 flex justify-center">
-                <img src="https://images.unsplash.com/photo-1518895949257-7621f3c786d4?w=800&q=80" alt="Red roses bouquet" class="w-full max-w-lg object-cover aspect-[6/5] rounded-lg shadow-lg" width="600" height="500" />
-              </div>
-            </div>
-          </div>
-        </div>
+        <!-- Swiper Navigation -->
+        <div class="swiper-button-prev"></div>
+        <div class="swiper-button-next"></div>
+        <!-- Swiper Pagination -->
+        <div class="swiper-pagination"></div>
       </div>
-      <button id="hero-prev" type="button" class="absolute top-1/2 -translate-y-1/2 z-10 left-2 sm:left-4 w-10 h-10 flex items-center justify-center text-gray-400 hover:text-gray-700 bg-white/85 rounded-full shadow-sm transition-colors" aria-label="Previous slide">
-        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M15 19l-7-7 7-7"/></svg>
-      </button>
-      <button id="hero-next" type="button" class="absolute top-1/2 -translate-y-1/2 z-10 right-2 sm:right-4 w-10 h-10 flex items-center justify-center text-gray-400 hover:text-gray-700 bg-white/85 rounded-full shadow-sm transition-colors" aria-label="Next slide">
-        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9 5l7 7-7 7"/></svg>
-      </button>
-      <div id="hero-dots" class="flex justify-center gap-2 pb-6"></div>
     </section>
 
     <!-- Features Bar -->
@@ -158,38 +233,66 @@
         <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 lg:gap-8">
           <div class="flex items-center gap-4 justify-center sm:justify-start">
             <div class="w-12 h-12 rounded-full flex items-center justify-center shrink-0 bg-red-50 text-brand">
-              <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M5 8h14M5 8a2 2 0 110-4h14a2 2 0 110 4M5 8v10a2 2 0 002 2h10a2 2 0 002-2V8m-9 4h4"/></svg>
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                class="lucide lucide-truck-icon lucide-truck">
+                <path d="M14 18V6a2 2 0 0 0-2-2H4a2 2 0 0 0-2 2v11a1 1 0 0 0 1 1h2" />
+                <path d="M15 18H9" />
+                <path d="M19 18h2a1 1 0 0 0 1-1v-3.65a1 1 0 0 0-.22-.624l-3.48-4.35A1 1 0 0 0 17.52 8H14" />
+                <circle cx="17" cy="18" r="2" />
+                <circle cx="7" cy="18" r="2" />
+              </svg>
+
             </div>
             <div>
-              <h3 class="font-semibold text-sm text-gray-900 uppercase tracking-wide">Free Shipping</h3>
-              <p class="text-gray-500 text-sm mt-0.5">On all orders over $75.00</p>
+              <h3 class="font-semibold text-sm text-gray-900 uppercase tracking-wide">Free Delivery</h3>
+              <p class="text-gray-500 text-sm mt-0.5">Free shipping around the world for all orders over $120</p>
             </div>
           </div>
           <div class="flex items-center gap-4 justify-center sm:justify-start">
             <div class="w-12 h-12 rounded-full flex items-center justify-center shrink-0 bg-teal-50 text-teal-600">
-              <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                class="lucide lucide-shopping-bag-icon lucide-shopping-bag">
+                <path d="M16 10a4 4 0 0 1-8 0" />
+                <path d="M3.103 6.034h17.794" />
+                <path
+                  d="M3.4 5.467a2 2 0 0 0-.4 1.2V20a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6.667a2 2 0 0 0-.4-1.2l-2-2.667A2 2 0 0 0 17 2H7a2 2 0 0 0-1.6.8z" />
+              </svg>
             </div>
             <div>
-              <h3 class="font-semibold text-sm text-gray-900 uppercase tracking-wide">Money Back</h3>
-              <p class="text-gray-500 text-sm mt-0.5">30 days money back guarantee</p>
+              <h3 class="font-semibold text-sm text-gray-900 uppercase tracking-wide">Online Order</h3>
+              <p class="text-gray-500 text-sm mt-0.5">Don't worry you can order Online by our Site</p>
             </div>
           </div>
           <div class="flex items-center gap-4 justify-center sm:justify-start">
             <div class="w-12 h-12 rounded-full flex items-center justify-center shrink-0 bg-purple-50 text-purple-600">
-              <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M18.364 5.636l-3.536 3.536m0 5.656l3.536 3.536M9.172 9.172L5.636 5.636m3.536 9.192l-3.536 3.536M21 12a9 9 0 11-18 0 9 9 0 0118 0zm-5 0a4 4 0 11-8 0 4 4 0 018 0z"/></svg>
+              <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"
+                  d="M18.364 5.636l-3.536 3.536m0 5.656l3.536 3.536M9.172 9.172L5.636 5.636m3.536 9.192l-3.536 3.536M21 12a9 9 0 11-18 0 9 9 0 0118 0zm-5 0a4 4 0 11-8 0 4 4 0 018 0z" />
+              </svg>
             </div>
             <div>
-              <h3 class="font-semibold text-sm text-gray-900 uppercase tracking-wide">Online Support</h3>
-              <p class="text-gray-500 text-sm mt-0.5">Technical support 24/7</p>
+              <h3 class="font-semibold text-sm text-gray-900 uppercase tracking-wide">Freshness</h3>
+              <p class="text-gray-500 text-sm mt-0.5">You have freshness flowers every single order</p>
             </div>
           </div>
           <div class="flex items-center gap-4 justify-center sm:justify-start">
             <div class="w-12 h-12 rounded-full flex items-center justify-center shrink-0 bg-green-50 text-green-600">
-              <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"/></svg>
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                class="lucide lucide-palette-icon lucide-palette">
+                <path
+                  d="M12 22a1 1 0 0 1 0-20 10 9 0 0 1 10 9 5 5 0 0 1-5 5h-2.25a1.75 1.75 0 0 0-1.4 2.8l.3.4a1.75 1.75 0 0 1-1.4 2.8z" />
+                <circle cx="13.5" cy="6.5" r=".5" fill="currentColor" />
+                <circle cx="17.5" cy="10.5" r=".5" fill="currentColor" />
+                <circle cx="6.5" cy="12.5" r=".5" fill="currentColor" />
+                <circle cx="8.5" cy="7.5" r=".5" fill="currentColor" />
+              </svg>
             </div>
             <div>
-              <h3 class="font-semibold text-sm text-gray-900 uppercase tracking-wide">Secure Payment</h3>
-              <p class="text-gray-500 text-sm mt-0.5">100% secure payment</p>
+              <h3 class="font-semibold text-sm text-gray-900 uppercase tracking-wide">Made By Artists</h3>
+              <p class="text-gray-500 text-sm mt-0.5">World for all made by artists orders over now</p>
             </div>
           </div>
         </div>
@@ -204,7 +307,10 @@
           <p class="text-gray-500 text-sm max-w-md mx-auto">Handpicked fresh arrangements delivered to your door</p>
         </div>
         <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 lg:gap-8" id="new-products-grid">
-          <!-- Products injected by JS -->
+          <!-- Products injected by JS  
+         **-----------//  Dear Hiring Manager **-----------// 
+         <--( I will create a website using React and Next.js that is better than using raw HTML, CSS, and JS. )-->
+         
         </div>
       </div>
     </section>
@@ -214,26 +320,57 @@
       <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div class="grid lg:grid-cols-2 gap-10 lg:gap-16 items-center">
           <div class="overflow-hidden rounded-lg">
-            <img src="https://images.unsplash.com/photo-1561181286-d3fee7d17064?w=900&q=80" alt="Colorful tulips in glass vases" class="w-full h-64 sm:h-80 lg:h-[420px] object-cover hover:scale-105 transition-transform duration-500" />
+            <img src="https://shirohanaflowers.com/cdn/shop/files/FF.webp?v=1749115631"
+              alt="Colorful tulips in glass vases"
+              class="w-full h-64 sm:h-80 lg:h-[420px] object-cover hover:scale-105 transition-transform duration-500" />
           </div>
-          <div class="text-center lg:text-left">
-            <h2 class="font-serif text-2xl sm:text-3xl lg:text-4xl text-gray-900 leading-snug mb-4">Surprise Your Valentine! Let us arrange a smile for her.</h2>
-            <p class="text-gray-500 text-sm sm:text-base mb-6 leading-relaxed">Our expert florists create stunning arrangements tailored to every occasion. From romantic roses to cheerful mixed bouquets, we bring beauty to life's special moments.</p>
-            <ul class="space-y-3 mb-8 text-left inline-block">
-              <li class="flex items-start gap-3 text-sm text-gray-600">
-                <span class="w-5 h-5 rounded-full bg-green-100 text-green-600 flex items-center justify-center shrink-0 mt-0.5"><svg class="w-4 h-4" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg></span>
-                Same-day delivery available
-              </li>
-              <li class="flex items-start gap-3 text-sm text-gray-600">
-                <span class="w-5 h-5 rounded-full bg-green-100 text-green-600 flex items-center justify-center shrink-0 mt-0.5"><svg class="w-4 h-4" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg></span>
-                Fresh flowers guaranteed
-              </li>
-              <li class="flex items-start gap-3 text-sm text-gray-600">
-                <span class="w-5 h-5 rounded-full bg-green-100 text-green-600 flex items-center justify-center shrink-0 mt-0.5"><svg class="w-4 h-4" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg></span>
-                Custom bouquet design service
-              </li>
-            </ul>
-            <a href="#shop" class="inline-block bg-brand text-white text-xs font-semibold tracking-widest px-8 py-3.5 rounded-full hover:bg-gray-900 transition-colors duration-300">READ MORE</a>
+          <div
+            class="text-center lg:text-left flex flex-col justify-start  lg:flex lg:flex-col lg:justify-center gap-6">
+            <div>
+              <h2 class="font-serif text-2xl sm:text-3xl lg:text-4xl text-gray-900 leading-snug mb-4">Surprise Your
+                Valentine! Let us arrange a smile for her.</h2>
+              <p class="text-gray-500 text-sm sm:text-base mb-6 leading-relaxed">Our expert florists create stunning
+                arrangements tailored to every occasion. From romantic roses to cheerful mixed bouquets, we bring beauty
+                to life's special moments.</p>
+              <ul class="space-y-3 mb-8 text-left inline-block">
+                <li class="flex items-start gap-3 text-sm text-gray-600">
+                  <span
+                    class="w-5 h-5 rounded-full bg-green-100 text-green-600 flex items-center justify-center shrink-0 mt-0.5"><svg
+                      class="w-4 h-4" fill="currentColor" viewBox="0 0 20 20">
+                      <path fill-rule="evenodd"
+                        d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
+                        clip-rule="evenodd" />
+                    </svg></span>
+                  Hand picked just for you.
+                </li>
+                <li class="flex items-start gap-3 text-sm text-gray-600">
+                  <span
+                    class="w-5 h-5 rounded-full bg-green-100 text-green-600 flex items-center justify-center shrink-0 mt-0.5"><svg
+                      class="w-4 h-4" fill="currentColor" viewBox="0 0 20 20">
+                      <path fill-rule="evenodd"
+                        d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
+                        clip-rule="evenodd" />
+                    </svg></span>
+                  Hand picked just for you.
+                </li>
+                <li class="flex items-start gap-3 text-sm text-gray-600">
+                  <span
+                    class="w-5 h-5 rounded-full bg-green-100 text-green-600 flex items-center justify-center shrink-0 mt-0.5"><svg
+                      class="w-4 h-4" fill="currentColor" viewBox="0 0 20 20">
+                      <path fill-rule="evenodd"
+                        d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
+                        clip-rule="evenodd" />
+                    </svg></span>
+                  Hand picked just for.
+                </li>
+              </ul>
+            </div>
+            <div class="flex justify-center lg:justify-start">
+              <a href="#shop"
+                class="inline-block bg-brand text-white text-xs font-semibold tracking-widest px-8 py-3.5 rounded-full hover:bg-gray-900 transition-colors duration-300">
+                READ DETAILS
+              </a>
+            </div>
           </div>
         </div>
       </div>
@@ -247,9 +384,15 @@
           <p class="text-gray-500 text-sm max-w-md mx-auto">Browse our most loved floral creations</p>
         </div>
         <div class="flex flex-wrap justify-center gap-4 sm:gap-8 mb-10" id="featured-tabs" role="tablist">
-          <button type="button" class="featured-tab text-xs font-semibold tracking-widest text-brand border-b-2 border-brand pb-1 bg-transparent cursor-pointer transition-colors" data-filter="all" role="tab" aria-selected="true">ALL</button>
-          <button type="button" class="featured-tab text-xs font-semibold tracking-widest text-gray-500 border-b-2 border-transparent pb-1 hover:text-brand bg-transparent cursor-pointer transition-colors" data-filter="bouquet" role="tab" aria-selected="false">BOUQUET</button>
-          <button type="button" class="featured-tab text-xs font-semibold tracking-widest text-gray-500 border-b-2 border-transparent pb-1 hover:text-brand bg-transparent cursor-pointer transition-colors" data-filter="indoor" role="tab" aria-selected="false">INDOOR</button>
+          <button type="button"
+            class="featured-tab text-xs font-semibold tracking-widest text-brand border-b-2 border-brand pb-1 bg-transparent cursor-pointer transition-colors"
+            data-filter="new" role="tab" aria-selected="true">NEW</button>
+          <button type="button"
+            class="featured-tab text-xs font-semibold tracking-widest text-gray-500 border-b-2 border-transparent pb-1 hover:text-brand bg-transparent cursor-pointer transition-colors"
+            data-filter="featured" role="tab" aria-selected="false">FEATURED</button>
+          <button type="button"
+            class="featured-tab text-xs font-semibold tracking-widest text-gray-500 border-b-2 border-transparent pb-1 hover:text-brand bg-transparent cursor-pointer transition-colors"
+            data-filter="sellers" role="tab" aria-selected="false">BEST SELLERS</button>
         </div>
         <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 lg:gap-8" id="featured-grid">
           <!-- Products injected by JS -->
@@ -259,34 +402,55 @@
 
     <!-- Testimonials -->
     <section class="relative py-16 lg:py-24 bg-cream overflow-hidden">
-      <img src="https://images.unsplash.com/photo-1520763185295-f1397f4b51db?w=300&q=60" alt="" class="absolute top-1/2 -translate-y-1/2 left-0 w-40 lg:w-56 h-auto object-cover pointer-events-none opacity-30 hidden md:block" aria-hidden="true" />
-      <img src="https://images.unsplash.com/photo-1520763185295-f1397f4b51db?w=300&q=60" alt="" class="absolute top-1/2 -translate-y-1/2 right-0 w-40 lg:w-56 h-auto object-cover pointer-events-none opacity-30 hidden md:block scale-x-[-1]" aria-hidden="true" />
+      <img src="https://images.unsplash.com/photo-1520763185295-f1397f4b51db?w=300&q=60" alt=""
+        class="absolute top-1/2 -translate-y-1/2 left-0 w-40 lg:w-56 h-auto object-cover pointer-events-none opacity-30 hidden md:block"
+        aria-hidden="true" />
+      <img src="https://images.unsplash.com/photo-1520763185295-f1397f4b51db?w=300&q=60" alt=""
+        class="absolute top-1/2 -translate-y-1/2 right-0 w-40 lg:w-56 h-auto object-cover pointer-events-none opacity-30 hidden md:block scale-x-[-1]"
+        aria-hidden="true" />
       <div class="max-w-3xl mx-auto px-4 sm:px-6 relative z-10">
         <div id="testimonial-slider" class="text-center">
           <div class="testimonial-slide">
-            <blockquote class="font-serif text-lg sm:text-xl lg:text-2xl text-gray-700 italic leading-relaxed mb-8">"The bouquet was absolutely stunning! Fresh flowers, beautiful packaging, and delivered right on time. Kape. made my mother's day truly special."</blockquote>
-            <img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=120&q=80" alt="Anna Smith" class="w-16 h-16 rounded-full object-cover mx-auto mb-3 ring-2 ring-white shadow" />
+            <blockquote class="font-serif text-lg sm:text-xl lg:text-2xl text-gray-700 italic leading-relaxed mb-8">"The
+              bouquet was absolutely stunning! Fresh flowers, beautiful packaging, and delivered right on time. Kape.
+              made my mother's day truly special."</blockquote>
+            <img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=120&q=80" alt="Anna Smith"
+              class="w-16 h-16 rounded-full object-cover mx-auto mb-3 ring-2 ring-white shadow" />
             <p class="font-semibold text-gray-900">Anna Smith</p>
             <p class="text-sm text-gray-500">Happy Customer</p>
           </div>
           <div class="testimonial-slide hidden">
-            <blockquote class="font-serif text-lg sm:text-xl lg:text-2xl text-gray-700 italic leading-relaxed mb-8">"I've ordered from many florists, but Kape. stands out. The quality is exceptional and their customer service is wonderful. Highly recommend!"</blockquote>
-            <img src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=120&q=80" alt="Sarah Johnson" class="w-16 h-16 rounded-full object-cover mx-auto mb-3 ring-2 ring-white shadow" />
+            <blockquote class="font-serif text-lg sm:text-xl lg:text-2xl text-gray-700 italic leading-relaxed mb-8">
+              "I've ordered from many florists, but Kape. stands out. The quality is exceptional and their customer
+              service is wonderful. Highly recommend!"</blockquote>
+            <img src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=120&q=80" alt="Sarah Johnson"
+              class="w-16 h-16 rounded-full object-cover mx-auto mb-3 ring-2 ring-white shadow" />
             <p class="font-semibold text-gray-900">Sarah Johnson</p>
             <p class="text-sm text-gray-500">Regular Client</p>
           </div>
           <div class="testimonial-slide hidden">
-            <blockquote class="font-serif text-lg sm:text-xl lg:text-2xl text-gray-700 italic leading-relaxed mb-8">"Perfect wedding flowers! The team understood our vision and delivered beyond expectations. Every guest complimented the arrangements."</blockquote>
-            <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=120&q=80" alt="Michael Chen" class="w-16 h-16 rounded-full object-cover mx-auto mb-3 ring-2 ring-white shadow" />
+            <blockquote class="font-serif text-lg sm:text-xl lg:text-2xl text-gray-700 italic leading-relaxed mb-8">
+              "Perfect wedding flowers! The team understood our vision and delivered beyond expectations. Every guest
+              complimented the arrangements."</blockquote>
+            <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=120&q=80" alt="Michael Chen"
+              class="w-16 h-16 rounded-full object-cover mx-auto mb-3 ring-2 ring-white shadow" />
             <p class="font-semibold text-gray-900">Michael Chen</p>
             <p class="text-sm text-gray-500">Wedding Client</p>
           </div>
         </div>
-        <button id="testimonial-prev" type="button" class="absolute top-1/2 -translate-y-1/2 z-10 left-2 sm:left-8 w-10 h-10 flex items-center justify-center text-gray-500 hover:text-gray-800 bg-white/60 rounded-full border-0 cursor-pointer transition-colors" aria-label="Previous testimonial">
-          <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M15 19l-7-7 7-7"/></svg>
+        <button id="testimonial-prev" type="button"
+          class="absolute top-1/2 -translate-y-1/2 z-10 left-2 sm:left-8 w-10 h-10 flex items-center justify-center text-gray-500 hover:text-gray-800 bg-white/60 rounded-full border-0 cursor-pointer transition-colors"
+          aria-label="Previous testimonial">
+          <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M15 19l-7-7 7-7" />
+          </svg>
         </button>
-        <button id="testimonial-next" type="button" class="absolute top-1/2 -translate-y-1/2 z-10 right-2 sm:right-8 w-10 h-10 flex items-center justify-center text-gray-500 hover:text-gray-800 bg-white/60 rounded-full border-0 cursor-pointer transition-colors" aria-label="Next testimonial">
-          <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9 5l7 7-7 7"/></svg>
+        <button id="testimonial-next" type="button"
+          class="absolute top-1/2 -translate-y-1/2 z-10 right-2 sm:right-8 w-10 h-10 flex items-center justify-center text-gray-500 hover:text-gray-800 bg-white/60 rounded-full border-0 cursor-pointer transition-colors"
+          aria-label="Next testimonial">
+          <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9 5l7 7-7 7" />
+          </svg>
         </button>
       </div>
     </section>
@@ -296,26 +460,31 @@
       <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div class="text-center mb-10 lg:mb-14">
           <h2 class="font-serif text-3xl sm:text-4xl text-gray-900 mb-3">Flower Experts</h2>
-          <p class="text-gray-500 text-sm max-w-md mx-auto">Meet the talented team behind every beautiful arrangement</p>
+          <p class="text-gray-500 text-sm max-w-md mx-auto">Meet the talented team behind every beautiful arrangement
+          </p>
         </div>
         <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 lg:gap-10">
           <article class="text-center group">
-            <img src="https://images.unsplash.com/photo-1580489944761-15a19d654956?w=300&q=80" alt="Crystal Hansen" class="w-40 h-40 sm:w-48 sm:h-48 rounded-full object-cover mx-auto ring-4 ring-gray-100 group-hover:ring-brand/20 transition-all" />
+            <img src="https://images.unsplash.com/photo-1580489944761-15a19d654956?w=300&q=80" alt="Crystal Hansen"
+              class="w-40 h-40 sm:w-48 sm:h-48 rounded-full object-cover mx-auto ring-4 ring-gray-100 group-hover:ring-brand/20 transition-all" />
             <h3 class="font-serif text-lg font-semibold text-gray-900 mt-5 uppercase tracking-wide">Crystal Hansen</h3>
             <p class="text-gray-500 text-sm mt-1">Florist</p>
           </article>
           <article class="text-center group">
-            <img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=300&q=80" alt="James Wilson" class="w-40 h-40 sm:w-48 sm:h-48 rounded-full object-cover mx-auto ring-4 ring-gray-100 group-hover:ring-brand/20 transition-all" />
+            <img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=300&q=80" alt="James Wilson"
+              class="w-40 h-40 sm:w-48 sm:h-48 rounded-full object-cover mx-auto ring-4 ring-gray-100 group-hover:ring-brand/20 transition-all" />
             <h3 class="font-serif text-lg font-semibold text-gray-900 mt-5 uppercase tracking-wide">James Wilson</h3>
             <p class="text-gray-500 text-sm mt-1">Senior Florist</p>
           </article>
           <article class="text-center group">
-            <img src="https://images.unsplash.com/photo-1560250097-0b93528c311a?w=300&q=80" alt="Emily Rodriguez" class="w-40 h-40 sm:w-48 sm:h-48 rounded-full object-cover mx-auto ring-4 ring-gray-100 group-hover:ring-brand/20 transition-all" />
+            <img src="https://images.unsplash.com/photo-1560250097-0b93528c311a?w=300&q=80" alt="Emily Rodriguez"
+              class="w-40 h-40 sm:w-48 sm:h-48 rounded-full object-cover mx-auto ring-4 ring-gray-100 group-hover:ring-brand/20 transition-all" />
             <h3 class="font-serif text-lg font-semibold text-gray-900 mt-5 uppercase tracking-wide">Emily Rodriguez</h3>
             <p class="text-gray-500 text-sm mt-1">Design Specialist</p>
           </article>
           <article class="text-center group">
-            <img src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=300&q=80" alt="David Park" class="w-40 h-40 sm:w-48 sm:h-48 rounded-full object-cover mx-auto ring-4 ring-gray-100 group-hover:ring-brand/20 transition-all" />
+            <img src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=300&q=80" alt="David Park"
+              class="w-40 h-40 sm:w-48 sm:h-48 rounded-full object-cover mx-auto ring-4 ring-gray-100 group-hover:ring-brand/20 transition-all" />
             <h3 class="font-serif text-lg font-semibold text-gray-900 mt-5 uppercase tracking-wide">David Park</h3>
             <p class="text-gray-500 text-sm mt-1">Shop Manager</p>
           </article>
@@ -333,30 +502,84 @@
         <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           <article class="blog-card group">
             <div class="overflow-hidden rounded-lg mb-5">
-              <img src="https://images.unsplash.com/photo-1487530811176-3780de880c2d?w=600&q=80" alt="Flower arrangement tips" class="w-full aspect-[4/3] object-cover transition-transform duration-500 group-hover:scale-105" />
+              <img src="https://images.unsplash.com/photo-1487530811176-3780de880c2d?w=600&q=80"
+                alt="Flower arrangement tips"
+                class="w-full aspect-[4/3] object-cover transition-transform duration-500 group-hover:scale-105" />
             </div>
             <p class="text-brand text-xs font-medium mb-2">January 15, 2024 / Flower</p>
-            <h3 class="font-serif text-xl font-semibold text-gray-900 mb-3 group-hover:text-brand transition-colors">How to Keep Cut Flowers Fresh Longer</h3>
-            <p class="text-gray-500 text-sm leading-relaxed mb-4">Learn simple tricks to extend the life of your bouquet and keep blooms vibrant for days.</p>
-            <a href="#" class="inline-flex items-center gap-1 text-sm font-medium text-gray-900 hover:text-brand transition-colors">Read More <span aria-hidden="true">→</span></a>
+            <h3 class="font-serif text-xl font-semibold text-gray-900 mb-3 group-hover:text-brand transition-colors">How
+              to Keep Cut Flowers Fresh Longer</h3>
+            <p class="text-gray-500 text-sm leading-relaxed mb-4">Learn simple tricks to extend the life of your bouquet
+              and keep blooms vibrant for days.</p>
+
+              <!-- line -->
+               <div class="border-t border-gray-200 mb-4"></div>
+             
+
+            <div class="flex justify-between gap-4">
+
+              <a href="#"
+              class="inline-flex underline items-center gap-1 text-sm font-normal text-gray-900 hover:text-brand transition-colors">
+              Continue Reading
+            </a>
+
+            <div class="flex gap-1">
+              <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-message-circle-icon lucide-message-circle"><path d="M2.992 16.342a2 2 0 0 1 .094 1.167l-1.065 3.29a1 1 0 0 0 1.236 1.168l3.413-.998a2 2 0 0 1 1.099.092 10 10 0 1 0-4.777-4.719"/></svg>
+              <!-- count -->
+              <span class="text-sm text-gray-500 ml-1">12</span>
+            </div>
+            </div>
+
           </article>
           <article class="blog-card group">
             <div class="overflow-hidden rounded-lg mb-5">
-              <img src="https://images.unsplash.com/photo-1455659817273-f96807779a8a?w=600&q=80" alt="Wedding flowers" class="w-full aspect-[4/3] object-cover transition-transform duration-500 group-hover:scale-105" />
+              <img src="https://images.unsplash.com/photo-1455659817273-f96807779a8a?w=600&q=80" alt="Wedding flowers"
+                class="w-full aspect-[4/3] object-cover transition-transform duration-500 group-hover:scale-105" />
             </div>
             <p class="text-brand text-xs font-medium mb-2">December 28, 2023 / Wedding</p>
-            <h3 class="font-serif text-xl font-semibold text-gray-900 mb-3 group-hover:text-brand transition-colors">Top Wedding Flower Trends for 2024</h3>
-            <p class="text-gray-500 text-sm leading-relaxed mb-4">Discover the hottest floral styles and color palettes for your dream wedding celebration.</p>
-            <a href="#" class="inline-flex items-center gap-1 text-sm font-medium text-gray-900 hover:text-brand transition-colors">Read More <span aria-hidden="true">→</span></a>
+            <h3 class="font-serif text-xl font-semibold text-gray-900 mb-3 group-hover:text-brand transition-colors">Top
+              Wedding Flower Trends for 2024</h3>
+            <p class="text-gray-500 text-sm leading-relaxed mb-4">Discover the hottest floral styles and color palettes
+              for your dream wedding celebration.</p>
+           <div class="border-t border-gray-200 mb-4"></div>
+           <div class="flex justify-between gap-4">
+
+              <a href="#"
+              class="inline-flex underline items-center gap-1 text-sm font-normal text-gray-900 hover:text-brand transition-colors">
+              Continue Reading
+            </a>
+
+            <div class="flex gap-1">
+              <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-message-circle-icon lucide-message-circle"><path d="M2.992 16.342a2 2 0 0 1 .094 1.167l-1.065 3.29a1 1 0 0 0 1.236 1.168l3.413-.998a2 2 0 0 1 1.099.092 10 10 0 1 0-4.777-4.719"/></svg>
+              <!-- count -->
+              <span class="text-sm text-gray-500 ml-1">0</span>
+            </div>
+            </div>
           </article>
           <article class="blog-card group">
             <div class="overflow-hidden rounded-lg mb-5">
-              <img src="https://images.unsplash.com/photo-1464349095431-e9a21285b5cc?w=600&q=80" alt="Indoor plants" class="w-full aspect-[4/3] object-cover transition-transform duration-500 group-hover:scale-105" />
+              <img src="https://shirohanaflowers.com/cdn/shop/files/DELICATE-FLORA.jpg?v=1749114936" alt="Indoor plants"
+                class="w-full aspect-[4/3] object-cover transition-transform duration-500 group-hover:scale-105" />
             </div>
             <p class="text-brand text-xs font-medium mb-2">November 10, 2023 / Indoor</p>
-            <h3 class="font-serif text-xl font-semibold text-gray-900 mb-3 group-hover:text-brand transition-colors">Best Indoor Plants for Beginners</h3>
-            <p class="text-gray-500 text-sm leading-relaxed mb-4">Bring nature indoors with these easy-care plants that thrive in any home environment.</p>
-            <a href="#" class="inline-flex items-center gap-1 text-sm font-medium text-gray-900 hover:text-brand transition-colors">Read More <span aria-hidden="true">→</span></a>
+            <h3 class="font-serif text-xl font-semibold text-gray-900 mb-3 group-hover:text-brand transition-colors">
+              Best Indoor Plants for Beginners</h3>
+            <p class="text-gray-500 text-sm leading-relaxed mb-4">Bring nature indoors with these easy-care plants that
+              thrive in any home environment.</p>
+           <div class="border-t border-gray-200 mb-4"></div>
+           <div class="flex justify-between gap-4">
+
+              <a href="#"
+              class="inline-flex underline items-center gap-1 text-sm font-normal text-gray-900 hover:text-brand transition-colors">
+              Continue Reading
+            </a>
+
+            <div class="flex gap-1">
+              <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-message-circle-icon lucide-message-circle"><path d="M2.992 16.342a2 2 0 0 1 .094 1.167l-1.065 3.29a1 1 0 0 0 1.236 1.168l3.413-.998a2 2 0 0 1 1.099.092 10 10 0 1 0-4.777-4.719"/></svg>
+              <!-- count -->
+              <span class="text-sm text-gray-500 ml-1">1</span>
+            </div>
+            </div>
           </article>
         </div>
       </div>
@@ -366,9 +589,12 @@
     <section class="py-14 lg:py-20">
       <div class="max-w-2xl mx-auto px-4 sm:px-6 text-center">
         <h2 class="font-serif text-3xl sm:text-4xl text-gray-900 mb-8">Join The Colorful Bunch!</h2>
-        <form id="newsletter-form" class="flex flex-col sm:flex-row gap-0 border border-gray-200 rounded-full overflow-hidden max-w-lg mx-auto shadow-sm">
-          <input type="email" required placeholder="Your email address..." class="flex-1 px-5 py-3.5 text-sm outline-none bg-white min-w-0" aria-label="Email address" />
-          <button type="submit" class="bg-brand text-white text-xs font-semibold tracking-widest px-8 py-3.5 hover:bg-gray-900 transition-colors shrink-0">SUBSCRIBE</button>
+        <form id="newsletter-form"
+          class="flex flex-col sm:flex-row gap-0 border border-gray-200 rounded-full overflow-hidden max-w-lg mx-auto shadow-sm">
+          <input type="email" required placeholder="Your email address..."
+            class="flex-1 px-5 py-3.5 text-sm outline-none bg-white min-w-0" aria-label="Email address" />
+          <button type="submit"
+            class="bg-brand text-white text-xs font-semibold tracking-widest px-8 py-3.5 hover:bg-gray-900 transition-colors shrink-0">SUBSCRIBE</button>
         </form>
         <p id="newsletter-msg" class="mt-4 text-sm text-green-600 hidden">Thank you for subscribing!</p>
       </div>
@@ -381,63 +607,98 @@
       <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-10 lg:gap-8 pb-12 border-b border-gray-700">
         <div class="lg:col-span-1 sm:col-span-2">
           <a href="#" class="font-serif text-2xl font-bold text-white">Kape.</a>
-          <p class="text-sm text-gray-400 mt-4 leading-relaxed max-w-xs">We craft beautiful floral experiences for every occasion. Fresh flowers, expert design, and delivery you can trust.</p>
+          <p class="text-sm text-gray-400 mt-4 leading-relaxed max-w-xs">A perfect blend of creativity, energy,
+communication, happiness and love. Let us
+arrange a smile for you.</p>
           <div class="flex gap-3 mt-6">
-            <a href="#" class="w-9 h-9 rounded-full border border-gray-600 flex items-center justify-center text-gray-400 hover:border-white hover:text-white transition-colors" aria-label="Facebook"><svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg></a>
-            <a href="#" class="w-9 h-9 rounded-full border border-gray-600 flex items-center justify-center text-gray-400 hover:border-white hover:text-white transition-colors" aria-label="Twitter"><svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path d="M23.953 4.57a10 10 0 01-2.825.775 4.958 4.958 0 002.163-2.723c-.951.555-2.005.959-3.127 1.184a4.92 4.92 0 00-8.384 4.482C7.69 8.095 4.067 6.13 1.64 3.162a4.822 4.822 0 00-.666 2.475c0 1.71.87 3.213 2.188 4.096a4.904 4.904 0 01-2.228-.616v.06a4.923 4.923 0 003.946 4.827 4.996 4.996 0 01-2.212.085 4.936 4.936 0 004.604 3.417 9.867 9.867 0 01-6.102 2.105c-.39 0-.779-.023-1.17-.067a13.995 13.995 0 007.557 2.209c9.053 0 13.998-7.496 13.998-13.985 0-.21 0-.42-.015-.63A9.935 9.935 0 0024 4.59z"/></svg></a>
-            <a href="#" class="w-9 h-9 rounded-full border border-gray-600 flex items-center justify-center text-gray-400 hover:border-white hover:text-white transition-colors" aria-label="Instagram"><svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg></a>
-            <a href="#" class="w-9 h-9 rounded-full border border-gray-600 flex items-center justify-center text-gray-400 hover:border-white hover:text-white transition-colors" aria-label="LinkedIn"><svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 114.127 0 2.062 2.062 0 01-2.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg></a>
+            <a href="#"
+              class="w-9 h-9 rounded-full border border-gray-600 flex items-center justify-center text-gray-400 hover:border-white hover:text-white transition-colors"
+              aria-label="Facebook"><svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24">
+                <path
+                  d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z" />
+              </svg></a>
+            <a href="#"
+              class="w-9 h-9 rounded-full border border-gray-600 flex items-center justify-center text-gray-400 hover:border-white hover:text-white transition-colors"
+              aria-label="Twitter"><svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24">
+                <path
+                  d="M23.953 4.57a10 10 0 01-2.825.775 4.958 4.958 0 002.163-2.723c-.951.555-2.005.959-3.127 1.184a4.92 4.92 0 00-8.384 4.482C7.69 8.095 4.067 6.13 1.64 3.162a4.822 4.822 0 00-.666 2.475c0 1.71.87 3.213 2.188 4.096a4.904 4.904 0 01-2.228-.616v.06a4.923 4.923 0 003.946 4.827 4.996 4.996 0 01-2.212.085 4.936 4.936 0 004.604 3.417 9.867 9.867 0 01-6.102 2.105c-.39 0-.779-.023-1.17-.067a13.995 13.995 0 007.557 2.209c9.053 0 13.998-7.496 13.998-13.985 0-.21 0-.42-.015-.63A9.935 9.935 0 0024 4.59z" />
+              </svg></a>
+            <a href="#"
+              class="w-9 h-9 rounded-full border border-gray-600 flex items-center justify-center text-gray-400 hover:border-white hover:text-white transition-colors"
+              aria-label="Instagram"><svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24">
+                <path
+                  d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z" />
+              </svg></a>
+            <a href="#"
+              class="w-9 h-9 rounded-full border border-gray-600 flex items-center justify-center text-gray-400 hover:border-white hover:text-white transition-colors"
+              aria-label="LinkedIn"><svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24">
+                <path
+                  d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 114.127 0 2.062 2.062 0 01-2.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z" />
+              </svg></a>
           </div>
         </div>
         <div>
-          <h4 class="text-white text-sm font-semibold uppercase tracking-wider mb-4">Our Services</h4>
+          <h4 class="text-white text-sm font-semibold uppercase tracking-wider mb-4">Information</h4>
           <ul class="space-y-2.5 text-sm">
-            <li><a href="#" class="hover:text-white transition-colors">About Us</a></li>
-            <li><a href="#" class="hover:text-white transition-colors">Flower Delivery</a></li>
-            <li><a href="#" class="hover:text-white transition-colors">Wedding Flowers</a></li>
-            <li><a href="#" class="hover:text-white transition-colors">Corporate Gifts</a></li>
+            <li><a href="#" class="hover:text-white transition-colors">Search Terms</a></li>
+            <li><a href="#" class="hover:text-white transition-colors">Advanced Search</a></li>
+            <li><a href="#" class="hover:text-white transition-colors">Helps & Faqs</a></li>
+            <li><a href="#" class="hover:text-white transition-colors">Store Location</a></li>
+            <li><a href="#" class="hover:text-white transition-colors">Orders & Returns</a></li>
           </ul>
         </div>
         <div>
-          <h4 class="text-white text-sm font-semibold uppercase tracking-wider mb-4">Categories</h4>
+          <h4 class="text-white text-sm font-semibold uppercase tracking-wider mb-4">My Account</h4>
           <ul class="space-y-2.5 text-sm">
-            <li><a href="#" class="hover:text-white transition-colors">Bouquets</a></li>
-            <li><a href="#" class="hover:text-white transition-colors">Indoor Plants</a></li>
-            <li><a href="#" class="hover:text-white transition-colors">Gift Baskets</a></li>
-            <li><a href="#" class="hover:text-white transition-colors">Seasonal</a></li>
+            <li><a href="#" class="hover:text-white transition-colors">Delivery</a></li>
+            <li><a href="#" class="hover:text-white transition-colors">Legal Notice</a></li>
+            <li><a href="#" class="hover:text-white transition-colors">Secure payment</a></li>
+            <li><a href="#" class="hover:text-white transition-colors">Sitemap</a></li>
+            <li><a href="#" class="hover:text-white transition-colors">About us</a></li>
           </ul>
         </div>
         <div>
           <h4 class="text-white text-sm font-semibold uppercase tracking-wider mb-4">Help</h4>
           <ul class="space-y-2.5 text-sm">
             <li><a href="#" class="hover:text-white transition-colors">FAQs</a></li>
-            <li><a href="#" class="hover:text-white transition-colors">Shipping Info</a></li>
+            <li><a href="#" class="hover:text-white transition-colors">ricing Plans</a></li>
+            <li><a href="#" class="hover:text-white transition-colors">Track Your Order</a></li>
             <li><a href="#" class="hover:text-white transition-colors">Returns</a></li>
-            <li><a href="#" class="hover:text-white transition-colors">Contact Us</a></li>
           </ul>
         </div>
         <div>
-          <h4 class="text-white text-sm font-semibold uppercase tracking-wider mb-4">Account</h4>
+          <h4 class="text-white text-sm font-semibold uppercase tracking-wider mb-4">Customer Service</h4>
           <ul class="space-y-2.5 text-sm">
             <li><a href="#" class="hover:text-white transition-colors">My Account</a></li>
-            <li><a href="#" class="hover:text-white transition-colors">Order History</a></li>
-            <li><a href="#" class="hover:text-white transition-colors">Wishlist</a></li>
-            <li><a href="#" class="hover:text-white transition-colors">Newsletter</a></li>
+            <li><a href="#" class="hover:text-white transition-colors">Terms of Use</a></li>
+            <li><a href="#" class="hover:text-white transition-colors">Deliveries & Returns</a></li>
+            <li><a href="#" class="hover:text-white transition-colors">Gift card</a></li>
+            <li><a href="#" class="hover:text-white transition-colors">Legal Notice</a></li>
           </ul>
         </div>
       </div>
       <div class="flex flex-col sm:flex-row justify-between items-center gap-4 pt-6 text-xs text-gray-500">
         <p>Copyright © 2024 Kape. All rights reserved.</p>
         <div class="flex items-center gap-3 flex-wrap justify-center">
-          <span class="px-2 py-1 bg-white/10 rounded text-[10px] font-bold text-white tracking-wide">VISA</span>
-          <span class="px-2 py-1 bg-white/10 rounded text-[10px] font-bold text-white tracking-wide">MC</span>
-          <span class="px-2 py-1 bg-white/10 rounded text-[10px] font-bold text-white tracking-wide">AMEX</span>
-          <span class="px-2 py-1 bg-white/10 rounded text-[10px] font-bold text-white tracking-wide">PAYPAL</span>
+          
+          <span class="bg-white px-4 py-[2px] rounded cursor-pointer">
+            <img src="./assets/master.png" alt="Master Card" class="h-7">
+          </span>
+          <span class="bg-white px-4 py-[2px] rounded cursor-pointer">
+            <img src="./assets/paypal.png" alt="PayPal" class="h-7">
+          </span>
+          <span class="bg-white px-4 py-[2px] rounded cursor-pointer">
+            <img src="./assets/visa.png" alt="Visa" class="h-7">
+          </span>
         </div>
       </div>
     </div>
   </footer>
 
+  <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.js"></script>
+  <script>lucide.createIcons()</script>
+  <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
   <script src="js/main.js"></script>
 </body>
+
 </html>
